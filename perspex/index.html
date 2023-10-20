@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perspex test</title>
+    <link rel="stylesheet" href="https://unpkg.com/transition-style">
+    <style>
+        body {
+            background-color: #eeeeee;
+            width: 100vw;
+            height: 100vh;
+            border: none;
+            padding: none;
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+
+
+        .perspex {
+            position: absolute;
+            width: calc(100vw - 200px);
+            height: calc(100vh - 200px);
+            mix-blend-mode: color-burn;
+            animation: edge linear infinite;
+            transition: 5s;
+            animation-fill-mode: backwards;
+            display: flex;
+            align-items: flex-end;
+            padding: 0;
+            border: 0;
+            margin: 0;
+            animation-delay: -5s;
+            backdrop-filter: blur(0.5px);
+        }
+
+        .perspex h2 {
+            color: white;
+            margin-left: 5px;
+            margin-bottom: 5px;
+        }
+
+        .perspex#blue {
+            left: 20px;
+            top: 20px;
+            background: rgba(0, 0, 200, 0.5);
+            animation-direction: reverse;
+        }
+
+        .perspex#orange {
+            left: 40px;
+            top: 40px;
+            background: rgba(255, 123, 0, 0.5);
+        }
+
+        .perspex#green {
+            left: 60px;
+            top: 60px;
+            background: rgba(0, 200, 0, 0.5);
+            animation-direction: reverse;
+        }
+
+        .perspex#cyan {
+            left: 80px;
+            top: 80px;
+            background: rgba(0, 123, 123, 0.5);
+        }
+
+        .perspex#red {
+            left: 100px;
+            top: 100px;
+            background: rgba(255, 0, 0, 0.5);
+            animation-direction: reverse;
+        }
+
+        .perspex#pink {
+            left: 120px;
+            top: 120px;
+            background: rgba(234, 0, 255, 0.5);
+        }
+
+        .perspex#yellow {
+            left: 140px;
+            top: 140px;
+            background: rgba(229, 255, 0, 0.5);
+            animation-direction: reverse;
+        }
+
+        @keyframes edge {
+            0% {
+                top: 0;
+                left: 0;
+                transform: translate(0) translateY(0);
+            }
+
+            25% {
+                top: 100%;
+                left: 0;
+                transform: translateX(0) translateY(-100%);
+            }
+
+            50% {
+                top: 100%;
+                left: 100%;
+                transform: translateX(-100%) translateY(-100%);
+            }
+
+            75% {
+                top: 0;
+                left: 100%;
+                transform: translateX(-100%) translateY(0);
+            }
+
+            100% {
+                top: 0;
+                left: 0;
+                transform: translateX(0) translateY(0);
+            }
+        }
+
+        .card {
+            position: absolute;
+            width: calc(100vw - 400px);
+            height: calc(100vh - 400px);
+            top: 200px;
+            left: 200px;
+            border: 0;
+            padding: 0;
+            margin: 0;
+            animation-delay: 3s;
+            color: white;
+            text-align: center;
+        }
+
+        .card img {
+            max-width: 100%;
+
+
+        }
+    </style>
+</head>
+
+
+<body>
+    <main>
+        <div class="perspex" id="blue">
+            <h2>art direction</h2>
+        </div>
+        <div class="perspex" id="orange">
+            <h2>branding</h2>
+        </div>
+        <div class="perspex" id="green">
+            <h2>editorial</h2>
+        </div>
+        <div class="perspex" id="cyan">
+            <h2>motion</h2>
+        </div>
+        <div class="perspex" id="red">
+            <h2>print</h2>
+        </div>
+        <div class="perspex" id="pink">
+            <h2>typography</h2>
+        </div>
+        <div class="perspex" id="yellow">
+            <h2>campaigning</h2>
+        </div>
+        <div class="card" transition-style="in:wipe:right">
+            <img src="logo.svg" alt="">
+            <h3>BA Graphic Design Degree Show 2024</h3>
+        </div>
+    </main>
+
+</body>
+<script>
+    document.querySelector('.perspex#blue').style.animationDuration = Math.floor(Math.random() * 30 + 2) + "s";
+    document.querySelector('.perspex#orange').style.animationDuration = Math.floor(Math.random() * 30 + 2) + "s";
+    document.querySelector('.perspex#green').style.animationDuration = Math.floor(Math.random() * 30 + 2) + "s";
+    document.querySelector('.perspex#cyan').style.animationDuration = Math.floor(Math.random() * 30 + 2) + "s";
+    document.querySelector('.perspex#red').style.animationDuration = Math.floor(Math.random() * 30 + 2) + "s";
+    document.querySelector('.perspex#pink').style.animationDuration = Math.floor(Math.random() * 30 + 2) + "s";
+    document.querySelector('.perspex#yellow').style.animationDuration = Math.floor(Math.random() * 30 + 2) + "s";
+</script>
+
+</html>
