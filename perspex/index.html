@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perspex test</title>
-    <link rel="stylesheet" href="https://unpkg.com/transition-style">
+    <link rel="stylesheet" href="https://use.typekit.net/odk1uhw.css">
     <style>
         body {
             background-color: #eeeeee;
@@ -26,7 +26,7 @@
             height: calc(100vh - 200px);
             mix-blend-mode: color-burn;
             animation: edge linear infinite;
-            transition: 5s;
+
             animation-fill-mode: backwards;
             display: flex;
             align-items: flex-end;
@@ -34,13 +34,17 @@
             border: 0;
             margin: 0;
             animation-delay: -5s;
-            backdrop-filter: blur(0.5px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .perspex h2 {
             color: white;
             margin-left: 5px;
             margin-bottom: 5px;
+            display: none;
         }
 
         .perspex#blue {
@@ -123,29 +127,126 @@
 
         .card {
             position: absolute;
-            width: calc(100vw - 400px);
-            height: calc(100vh - 400px);
+            width: calc(100vw - 460px);
+            height: calc(100vh - 460px);
             top: 200px;
             left: 200px;
             border: 0;
-            padding: 0;
+            padding: 30px;
             margin: 0;
             animation-delay: 3s;
             color: white;
-            text-align: center;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            justify-content: space-between;
+
         }
 
-        .card img {
-            width: 80%;
-            max-width: 500px;
+
+        .card * {
+            padding: 0;
+            margin: 0;
 
 
+        }
+
+        .card .branding {
+            align-self: flex-start;
+        }
+
+        .card .links {
+            align-self: flex-end;
+        }
+
+        .card h1 {
+            font-family: "reklame-script", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 3rem;
+        }
+
+        .card h3 {
+            font-family: "ibm-plex-sans", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        .card .links ul li {
+            list-style: none;
+            padding: 5px 5px 5px 30px;
+            text-align: right;
+            border: 1px solid white;
+            margin-block-end: 5px;
+            transition: .2s;
+            cursor: pointer;
+        }
+
+        .card .links ul li:hover {
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+
+        /* Orientation */
+        @media (orientation: landscape) {
+
+
+            div.portrait {
+                display: none;
+            }
+        }
+
+        @media (orientation: portrait) {
+            main {
+                display: none;
+            }
+
+            body {
+                background: black;
+            }
+
+        }
+
+        div.portrait {
+            color: white;
+            text-align: center;
+            font-family: 'Montserrat';
+            margin: auto;
+            padding: 50px;
+
+        }
+
+        div.portrait img {
+            max-width: 50%;
+        }
+
+
+        div.insta-wrapper {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            border-radius: 4px;
+            padding: 4px;
+            margin: 0;
+        }
+
+        div.insta {
+            background: black;
+            border-radius: 4px;
+            height: 100%;
+            padding: 10px;
         }
     </style>
 </head>
 
 
 <body>
+    <div class="portrait">
+        <img src="rotate.gif">
+        <p>Please turn your phone to landscape.<br>
+            Or, if you're on a PC, make the window wider.</p>
+
+    </div>
     <main>
         <div class="perspex" id="blue">
             <h2>art direction</h2>
@@ -168,9 +269,22 @@
         <div class="perspex" id="yellow">
             <h2>campaigning</h2>
         </div>
-        <div class="card" transition-style="in:wipe:right">
-            <img src="logo.png" alt="">
-            <h3>BA Graphic Design Degree Show 2024</h3>
+        <div class="card">
+            <!--<img src="logo.png" alt="">
+            <h3>BA Graphic Design Degree Show 2024</h3>-->
+            <!--<iframe src="https://bradleysans.uk/" frameborder="0" width="100%" height="100%"></iframe>-->
+            <div class="links">
+                <ul>
+                    <li>Visit</li>
+                    <li>Portfolios</li>
+                    <li>About</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+            <div class="branding">
+                <h1>This is the Place</h1><br>
+                <h3>BA Graphic Design Degree Show 2024</h3>
+            </div>
         </div>
     </main>
 
