@@ -50,46 +50,37 @@
         .perspex#blue {
             left: 20px;
             top: 20px;
-            background: rgba(0, 0, 200, 0.5);
+            background: rgba(148, 215, 242, 0.5);
             animation-direction: reverse;
         }
 
         .perspex#orange {
             left: 40px;
             top: 40px;
-            background: rgba(255, 123, 0, 0.5);
+            background: rgba(254, 140, 1, 0.5);
         }
 
         .perspex#green {
             left: 60px;
             top: 60px;
-            background: rgba(0, 200, 0, 0.5);
+            background: rgba(1, 155, 78, 0.5);
             animation-direction: reverse;
         }
 
-        .perspex#cyan {
-            left: 80px;
-            top: 80px;
-            background: rgba(0, 123, 123, 0.5);
-        }
 
         .perspex#red {
             left: 100px;
             top: 100px;
-            background: rgba(255, 0, 0, 0.5);
+            background: rgba(214, 0, 0, 0.5);
             animation-direction: reverse;
         }
 
-        .perspex#pink {
-            left: 120px;
-            top: 120px;
-            background: rgba(234, 0, 255, 0.5);
-        }
+
 
         .perspex#yellow {
             left: 140px;
             top: 140px;
-            background: rgba(229, 255, 0, 0.5);
+            background: rgba(246, 253, 0, 0.5);
             animation-direction: reverse;
         }
 
@@ -233,25 +224,21 @@
     </div>
     <main>
         <div class="perspex" id="blue">
-            <h2>art direction</h2>
-        </div>
-        <div class="perspex" id="orange">
             <h2>branding</h2>
         </div>
+        <div class="perspex" id="orange">
+            <h2>art direction</h2>
+        </div>
         <div class="perspex" id="green">
-            <h2>editorial</h2>
-        </div>
-        <div class="perspex" id="cyan">
-            <h2>motion</h2>
-        </div>
-        <div class="perspex" id="red">
             <h2>print</h2>
         </div>
-        <div class="perspex" id="pink">
+
+        <div class="perspex" id="red">
             <h2>typography</h2>
         </div>
+
         <div class="perspex" id="yellow">
-            <h2>campaigning</h2>
+            <h2>motion</h2>
         </div>
         <div class="card">
             <!--<img src="logo.png" alt="">
@@ -277,9 +264,7 @@
     document.querySelector('.perspex#blue').style.animationDuration = Math.floor(Math.random() * 30 + 2) + "s";
     document.querySelector('.perspex#orange').style.animationDuration = Math.floor(Math.random() * 30 + 2) + "s";
     document.querySelector('.perspex#green').style.animationDuration = Math.floor(Math.random() * 30 + 2) + "s";
-    document.querySelector('.perspex#cyan').style.animationDuration = Math.floor(Math.random() * 30 + 2) + "s";
     document.querySelector('.perspex#red').style.animationDuration = Math.floor(Math.random() * 30 + 2) + "s";
-    document.querySelector('.perspex#pink').style.animationDuration = Math.floor(Math.random() * 30 + 2) + "s";
     document.querySelector('.perspex#yellow').style.animationDuration = Math.floor(Math.random() * 30 + 2) + "s";
 </script>
 
