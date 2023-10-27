@@ -64,7 +64,7 @@
         }
 
         .flip-card-inner {
-            animation: flipping 5s infinite;
+            animation: flipping 15s infinite;
         }
 
         h1 {
@@ -84,8 +84,16 @@
                 transform: rotateY(0deg);
             }
 
+            10% {
+                transform: rotateY(180deg);
+            }
+
             50% {
                 transform: rotateY(180deg);
+            }
+
+            60% {
+                transform: rotateY(360deg);
             }
 
             100% {
