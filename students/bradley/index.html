@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bradley Sansom | THIS IS THE PLACE</title>
+    <link rel="stylesheet" href="https://use.typekit.net/crm4hph.css">
+    <style>
+        body {
+            background-color: #111111;
+            color: #eeeeee;
+        }
+
+        header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        nav ul {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+
+        nav ul li {
+            list-style: none;
+            font-family: "obviously-narrow", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            cursor: pointer;
+            padding: 5px 10px;
+        }
+
+        nav ul li.active {
+            background-color: white;
+            color: black;
+        }
+
+        .logo {
+            width: 5.2ch;
+            display: flex;
+            flex-direction: column;
+            font-family: "obviously", sans-serif;
+            font-weight: 800;
+            line-height: 0.8;
+            font-size: 2rem;
+            font-style: normal;
+            text-transform: uppercase;
+
+        }
+
+        .logo .left {
+            align-self: flex-start;
+        }
+
+        .logo .right {
+            align-self: flex-end;
+        }
+
+        .logo #is {
+            padding-inline-start: 0.12ch;
+        }
+
+        h1 {
+            font-family: "obviously", sans-serif;
+            font-weight: 800;
+        }
+
+
+        article.student {
+            min-width: 250px;
+            aspect-ratio: 1;
+            flex-grow: 1;
+
+        }
+
+        .flip-card-inner {
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+            cursor: pointer;
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            text-align: center;
+            backface-visibility: hidden;
+
+
+        }
+
+        .flip-card-back {
+            transform: rotateY(180deg);
+            background-color: pink;
+            background-size: 80%;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-start;
+
+        }
+
+        .flip-card-front {
+            background-size: cover;
+            background-position: center;
+            filter: saturate(500%) grayscale(100%);
+        }
+
+        .student.bradley-sansom .flip-card-front {
+            background-image: url('bradley.png')
+        }
+
+        .student.bradley-sansom .flip-card-back {
+            background-image: url('bradley-sansom-ident.svg');
+        }
+
+
+
+
+        .student:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .student-name {
+            font-family: "obviously", sans-serif;
+            font-weight: 800;
+            font-size: 20px;
+            color: white;
+            margin: 20px;
+            mix-blend-mode: screen;
+
+        }
+
+        .pink {
+            background-color: pink;
+        }
+
+        .red {
+            background-color: rgb(214, 0, 0);
+        }
+
+        .green {
+            background-color: rgb(1, 155, 78);
+        }
+
+        .blue {
+            background-color: rgb(40, 159, 242);
+        }
+
+        .orange {
+            background-color: rgb(254, 140, 1);
+        }
+
+        .yellow {
+            background-color: rgb(246, 253, 0);
+        }
+
+
+
+        @keyframes flipping {
+            0% {
+                transform: rotateY(0deg);
+            }
+
+            10% {
+                transform: rotateY(180deg);
+            }
+
+            50% {
+                transform: rotateY(180deg);
+            }
+
+            60% {
+                transform: rotateY(360deg);
+            }
+
+            100% {
+                transform: rotateY(360deg);
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <span class="left">this</span><span class="left" id="is">is</span><span class="right">the</span><span
+                class="right">place</span>
+        </div>
+        <nav>
+            <ul>
+                <li>Visit</li>
+                <li class="active">Students</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Bradley Sansom</h1>
+        <article class="student bradley-sansom">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+
+                </div>
+                <div class="flip-card-back red">
+                    <h2 class="student-name">Bradley Sansom</h2>
+                </div>
+            </div>
+        </article>
+    </main>
+</body>
+<script>function updateView(event) {
+        // Handle the difference in whether the event is fired on the <a> or the <img>
+        const targetIdentifier = event.target.firstChild || event.target;
+
+        const displayNewImage = () => {
+            const mainSrc = `${targetIdentifier.src.split("_th.jpg")[0]}.jpg`;
+            galleryImg.src = mainSrc;
+            galleryCaption.textContent = targetIdentifier.alt;
+        };
+
+        // Fallback for browsers that don't support View Transitions:
+        if (!document.startViewTransition) {
+            displayNewImage();
+            return;
+        }
+
+        // With View Transitions:
+        const transition = document.startViewTransition(() => displayNewImage());
+    }</script>
+
+</html>

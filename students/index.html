@@ -9,8 +9,17 @@
     <link rel="stylesheet" href="https://use.typekit.net/crm4hph.css">
     <style>
         body {
+            margin: 0;
+            border: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: calc(90vw - 20px);
             background-color: #111111;
             color: #eeeeee;
+            margin: 0 5vw;
+            padding: 10px;
         }
 
         header {
@@ -216,481 +225,605 @@
             }
 
         }
+
+        .boxes {
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            z-index: -1;
+            top: 0;
+            left: 0;
+        }
+
+        .perspex {
+            z-index: -1;
+            position: absolute;
+            width: 95vw;
+            height: 100%;
+            mix-blend-mode: color-burn;
+            animation: edge linear infinite;
+
+            animation-fill-mode: backwards;
+            display: flex;
+            align-items: flex-end;
+            padding: 0;
+            border: 0;
+            margin: 0;
+            animation-delay: -5s;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+
+
+        .perspex#blue {
+            background: rgba(40, 159, 242, 0.5);
+            animation-direction: reverse;
+        }
+
+        .perspex#orange {
+            background: rgba(254, 140, 1, 0.5);
+        }
+
+        .perspex#green {
+            background: rgba(1, 155, 78, 0.5);
+            animation-direction: reverse;
+        }
+
+
+        .perspex#red {
+            background: rgba(214, 0, 0, 0.5);
+            animation-direction: reverse;
+        }
+
+
+
+        .perspex#yellow {
+            background: rgba(246, 253, 0, 0.5);
+            animation-direction: reverse;
+        }
+
+        @keyframes edge {
+            0% {
+                top: 0;
+                left: 0;
+                transform: translate(0) translateY(0);
+            }
+
+            25% {
+                top: 100%;
+                left: 0;
+                transform: translateX(0) translateY(-100%);
+            }
+
+            50% {
+                top: 100%;
+                left: 100%;
+                transform: translateX(-100%) translateY(-100%);
+            }
+
+            75% {
+                top: 0;
+                left: 100%;
+                transform: translateX(-100%) translateY(0);
+            }
+
+            100% {
+                top: 0;
+                left: 0;
+                transform: translateX(0) translateY(0);
+            }
+        }
     </style>
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            <span class="left">this</span><span class="left" id="is">is</span><span class="right">the</span><span
-                class="right">place</span>
+    <div class="boxes">
+        <div class="perspex" id="blue">
+
         </div>
-        <nav>
-            <ul>
-                <li>Visit</li>
-                <li class="active">Students</li>
-                <li>About</li>
-                <li>Contact</li>
-            </ul>
-        </nav>
-    </header>
+        <div class="perspex" id="orange">
 
-    <main>
-        <h1>Students</h1>
-        <section class="students-grid">
-            <article class="student bradley-sansom">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
+        </div>
+        <div class="perspex" id="green">
 
-                    </div>
-                    <div class="flip-card-back red">
-                        <h2 class="student-name">Bradley Sansom</h2>
-                    </div>
-                </div>
-            </article>
-            <article class="student sophia-cimelli">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
+        </div>
 
-                    </div>
-                    <div class="flip-card-back green">
-                        <h2 class="student-name">Sophia Cimelli</h2>
-                    </div>
-                </div>
-            </article>
-            <article class="student laura-sheridan">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
+        <div class="perspex" id="red">
 
-                    </div>
-                    <div class="flip-card-back orange">
-                        <h2 class="student-name">Laura Sheridan</h2>
-                    </div>
-                </div>
-            </article>
-            <article class="student annie-pugsley">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
+        </div>
 
-                    </div>
-                    <div class="flip-card-back blue">
-                        <h2 class="student-name">Annie Pugsley</h2>
-                    </div>
-                </div>
-            </article>
-            <article class="student sophia-cimelli">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
+        <div class="perspex" id="yellow">
 
-                    </div>
-                    <div class="flip-card-back green">
-                        <h2 class="student-name">Sophia Cimelli</h2>
-                    </div>
-                </div>
-            </article>
-            <article class="student annie-pugsley">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
+        </div>
+    </div>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <span class="left">this</span><span class="left" id="is">is</span><span class="right">the</span><span
+                    class="right">place</span>
+            </div>
+            <nav>
+                <ul>
+                    <li>Visit</li>
+                    <li class="active">Students</li>
+                    <li>About</li>
+                    <li>Contact</li>
+                </ul>
+            </nav>
+        </header>
 
-                    </div>
-                    <div class="flip-card-back red">
-                        <h2 class="student-name">Annie Pugsley</h2>
-                    </div>
-                </div>
-            </article>
-            <article class="student bradley-sansom">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
+        <main>
+            <h1>Students</h1>
+            <section class="students-grid">
+                <article class="student bradley-sansom">
+                    <a href="bradley/index.html">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
 
-                    </div>
-                    <div class="flip-card-back green">
-                        <h2 class="student-name">Bradley Sansom</h2>
-                    </div>
-                </div>
-            </article>
-            <article class="student sophia-cimelli">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                            </div>
+                            <div class="flip-card-back red">
+                                <h2 class="student-name">Bradley Sansom</h2>
+                            </div>
+                        </div>
+                    </a>
 
-                    </div>
-                    <div class="flip-card-back orange">
-                        <h2 class="student-name">Sophia Cimelli</h2>
-                    </div>
-                </div>
-            </article>
-            <article class="student laura-sheridan">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                </article>
+                <article class="student sophia-cimelli">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
 
+                        </div>
+                        <div class="flip-card-back green">
+                            <h2 class="student-name">Sophia Cimelli</h2>
+                        </div>
                     </div>
-                    <div class="flip-card-back yellow">
-                        <h2 class="student-name">Laura Sheridan</h2>
-                    </div>
-                </div>
-            </article>
-            <article class="student annie-pugsley">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                </article>
+                <article class="student laura-sheridan">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
 
+                        </div>
+                        <div class="flip-card-back orange">
+                            <h2 class="student-name">Laura Sheridan</h2>
+                        </div>
                     </div>
-                    <div class="flip-card-back pink">
-                        <h2 class="student-name">Annie Pugsley</h2>
-                    </div>
-                </div>
-            </article>
-            <article class="student annie-pugsley">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                </article>
+                <article class="student annie-pugsley">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
 
+                        </div>
+                        <div class="flip-card-back blue">
+                            <h2 class="student-name">Annie Pugsley</h2>
+                        </div>
                     </div>
-                    <div class="flip-card-back blue">
-                        <h2 class="student-name">Annie Pugsley</h2>
-                    </div>
-                </div>
-            </article>
-            <article class="student sophia-cimelli">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                </article>
+                <article class="student sophia-cimelli">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
 
+                        </div>
+                        <div class="flip-card-back green">
+                            <h2 class="student-name">Sophia Cimelli</h2>
+                        </div>
                     </div>
-                    <div class="flip-card-back green">
-                        <h2 class="student-name">Sophia Cimelli</h2>
-                    </div>
-                </div>
-            </article>
-            <article class="student annie-pugsley">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                </article>
+                <article class="student annie-pugsley">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
 
+                        </div>
+                        <div class="flip-card-back red">
+                            <h2 class="student-name">Annie Pugsley</h2>
+                        </div>
                     </div>
-                    <div class="flip-card-back red">
-                        <h2 class="student-name">Annie Pugsley</h2>
-                    </div>
-                </div>
-            </article>
-            <article class="student bradley-sansom">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                </article>
+                <article class="student bradley-sansom">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
 
+                        </div>
+                        <div class="flip-card-back green">
+                            <h2 class="student-name">Bradley Sansom</h2>
+                        </div>
                     </div>
-                    <div class="flip-card-back green">
-                        <h2 class="student-name">Bradley Sansom</h2>
-                    </div>
-                </div>
-            </article>
-            <article class="student sophia-cimelli">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                </article>
+                <article class="student sophia-cimelli">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
 
+                        </div>
+                        <div class="flip-card-back orange">
+                            <h2 class="student-name">Sophia Cimelli</h2>
+                        </div>
                     </div>
-                    <div class="flip-card-back orange">
-                        <h2 class="student-name">Sophia Cimelli</h2>
-                    </div>
-                </div>
-            </article>
-            <article class="student laura-sheridan">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                </article>
+                <article class="student laura-sheridan">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
 
+                        </div>
+                        <div class="flip-card-back yellow">
+                            <h2 class="student-name">Laura Sheridan</h2>
+                        </div>
                     </div>
-                    <div class="flip-card-back yellow">
-                        <h2 class="student-name">Laura Sheridan</h2>
-                    </div>
-                </div>
-            </article>
-            <article class="student annie-pugsley">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                </article>
+                <article class="student annie-pugsley">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
 
+                        </div>
+                        <div class="flip-card-back pink">
+                            <h2 class="student-name">Annie Pugsley</h2>
+                        </div>
                     </div>
-                    <div class="flip-card-back pink">
-                        <h2 class="student-name">Annie Pugsley</h2>
-                    </div>
-                </div>
-            </article>
-            <article class="student annie-pugsley">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                </article>
+                <article class="student annie-pugsley">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
 
+                        </div>
+                        <div class="flip-card-back blue">
+                            <h2 class="student-name">Annie Pugsley</h2>
+                        </div>
                     </div>
-                    <div class="flip-card-back blue">
-                        <h2 class="student-name">Annie Pugsley</h2>
-                    </div>
-                </div>
-            </article>
-            <article class="student sophia-cimelli">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                </article>
+                <article class="student sophia-cimelli">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
 
+                        </div>
+                        <div class="flip-card-back green">
+                            <h2 class="student-name">Sophia Cimelli</h2>
+                        </div>
                     </div>
-                    <div class="flip-card-back green">
-                        <h2 class="student-name">Sophia Cimelli</h2>
-                    </div>
-                </div>
-            </article>
-            <article class="student annie-pugsley">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                </article>
+                <article class="student annie-pugsley">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
 
+                        </div>
+                        <div class="flip-card-back red">
+                            <h2 class="student-name">Annie Pugsley</h2>
+                        </div>
                     </div>
-                    <div class="flip-card-back red">
-                        <h2 class="student-name">Annie Pugsley</h2>
-                    </div>
-                </div>
-            </article>
-            <article class="student bradley-sansom">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                </article>
+                <article class="student bradley-sansom">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
 
+                        </div>
+                        <div class="flip-card-back green">
+                            <h2 class="student-name">Bradley Sansom</h2>
+                        </div>
                     </div>
-                    <div class="flip-card-back green">
-                        <h2 class="student-name">Bradley Sansom</h2>
-                    </div>
-                </div>
-            </article>
-            <article class="student sophia-cimelli">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                </article>
+                <article class="student sophia-cimelli">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
 
+                        </div>
+                        <div class="flip-card-back orange">
+                            <h2 class="student-name">Sophia Cimelli</h2>
+                        </div>
                     </div>
-                    <div class="flip-card-back orange">
-                        <h2 class="student-name">Sophia Cimelli</h2>
-                    </div>
-                </div>
-            </article>
-            <article class="student laura-sheridan">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                </article>
+                <article class="student laura-sheridan">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
 
+                        </div>
+                        <div class="flip-card-back yellow">
+                            <h2 class="student-name">Laura Sheridan</h2>
+                        </div>
                     </div>
-                    <div class="flip-card-back yellow">
-                        <h2 class="student-name">Laura Sheridan</h2>
-                    </div>
-                </div>
-            </article>
-            <article class="student annie-pugsley">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                </article>
+                <article class="student annie-pugsley">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
 
+                        </div>
+                        <div class="flip-card-back pink">
+                            <h2 class="student-name">Annie Pugsley</h2>
+                        </div>
                     </div>
-                    <div class="flip-card-back pink">
-                        <h2 class="student-name">Annie Pugsley</h2>
-                    </div>
-                </div>
-            </article>
-            <article class="student annie-pugsley">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                </article>
+                <article class="student annie-pugsley">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
 
+                        </div>
+                        <div class="flip-card-back blue">
+                            <h2 class="student-name">Annie Pugsley</h2>
+                        </div>
                     </div>
-                    <div class="flip-card-back blue">
-                        <h2 class="student-name">Annie Pugsley</h2>
-                    </div>
-                </div>
-            </article>
-            <article class="student sophia-cimelli">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                </article>
+                <article class="student sophia-cimelli">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
 
+                        </div>
+                        <div class="flip-card-back green">
+                            <h2 class="student-name">Sophia Cimelli</h2>
+                        </div>
                     </div>
-                    <div class="flip-card-back green">
-                        <h2 class="student-name">Sophia Cimelli</h2>
-                    </div>
-                </div>
-            </article>
-            <article class="student annie-pugsley">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                </article>
+                <article class="student annie-pugsley">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
 
+                        </div>
+                        <div class="flip-card-back red">
+                            <h2 class="student-name">Annie Pugsley</h2>
+                        </div>
                     </div>
-                    <div class="flip-card-back red">
-                        <h2 class="student-name">Annie Pugsley</h2>
-                    </div>
-                </div>
-            </article>
-            <article class="student bradley-sansom">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                </article>
+                <article class="student bradley-sansom">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
 
+                        </div>
+                        <div class="flip-card-back green">
+                            <h2 class="student-name">Bradley Sansom</h2>
+                        </div>
                     </div>
-                    <div class="flip-card-back green">
-                        <h2 class="student-name">Bradley Sansom</h2>
-                    </div>
-                </div>
-            </article>
-            <article class="student sophia-cimelli">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                </article>
+                <article class="student sophia-cimelli">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
 
+                        </div>
+                        <div class="flip-card-back orange">
+                            <h2 class="student-name">Sophia Cimelli</h2>
+                        </div>
                     </div>
-                    <div class="flip-card-back orange">
-                        <h2 class="student-name">Sophia Cimelli</h2>
-                    </div>
-                </div>
-            </article>
-            <article class="student laura-sheridan">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                </article>
+                <article class="student laura-sheridan">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
 
+                        </div>
+                        <div class="flip-card-back yellow">
+                            <h2 class="student-name">Laura Sheridan</h2>
+                        </div>
                     </div>
-                    <div class="flip-card-back yellow">
-                        <h2 class="student-name">Laura Sheridan</h2>
-                    </div>
-                </div>
-            </article>
-            <article class="student annie-pugsley">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                </article>
+                <article class="student annie-pugsley">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
 
+                        </div>
+                        <div class="flip-card-back pink">
+                            <h2 class="student-name">Annie Pugsley</h2>
+                        </div>
                     </div>
-                    <div class="flip-card-back pink">
-                        <h2 class="student-name">Annie Pugsley</h2>
-                    </div>
-                </div>
-            </article>
-            <article class="student annie-pugsley">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                </article>
+                <article class="student annie-pugsley">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
 
+                        </div>
+                        <div class="flip-card-back blue">
+                            <h2 class="student-name">Annie Pugsley</h2>
+                        </div>
                     </div>
-                    <div class="flip-card-back blue">
-                        <h2 class="student-name">Annie Pugsley</h2>
-                    </div>
-                </div>
-            </article>
-            <article class="student sophia-cimelli">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                </article>
+                <article class="student sophia-cimelli">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
 
+                        </div>
+                        <div class="flip-card-back green">
+                            <h2 class="student-name">Sophia Cimelli</h2>
+                        </div>
                     </div>
-                    <div class="flip-card-back green">
-                        <h2 class="student-name">Sophia Cimelli</h2>
-                    </div>
-                </div>
-            </article>
-            <article class="student annie-pugsley">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                </article>
+                <article class="student annie-pugsley">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
 
+                        </div>
+                        <div class="flip-card-back red">
+                            <h2 class="student-name">Annie Pugsley</h2>
+                        </div>
                     </div>
-                    <div class="flip-card-back red">
-                        <h2 class="student-name">Annie Pugsley</h2>
-                    </div>
-                </div>
-            </article>
-            <article class="student bradley-sansom">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                </article>
+                <article class="student bradley-sansom">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
 
+                        </div>
+                        <div class="flip-card-back green">
+                            <h2 class="student-name">Bradley Sansom</h2>
+                        </div>
                     </div>
-                    <div class="flip-card-back green">
-                        <h2 class="student-name">Bradley Sansom</h2>
-                    </div>
-                </div>
-            </article>
-            <article class="student sophia-cimelli">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                </article>
+                <article class="student sophia-cimelli">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
 
+                        </div>
+                        <div class="flip-card-back orange">
+                            <h2 class="student-name">Sophia Cimelli</h2>
+                        </div>
                     </div>
-                    <div class="flip-card-back orange">
-                        <h2 class="student-name">Sophia Cimelli</h2>
-                    </div>
-                </div>
-            </article>
-            <article class="student laura-sheridan">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                </article>
+                <article class="student laura-sheridan">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
 
+                        </div>
+                        <div class="flip-card-back yellow">
+                            <h2 class="student-name">Laura Sheridan</h2>
+                        </div>
                     </div>
-                    <div class="flip-card-back yellow">
-                        <h2 class="student-name">Laura Sheridan</h2>
-                    </div>
-                </div>
-            </article>
-            <article class="student annie-pugsley">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                </article>
+                <article class="student annie-pugsley">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
 
+                        </div>
+                        <div class="flip-card-back pink">
+                            <h2 class="student-name">Annie Pugsley</h2>
+                        </div>
                     </div>
-                    <div class="flip-card-back pink">
-                        <h2 class="student-name">Annie Pugsley</h2>
-                    </div>
-                </div>
-            </article>
-            <article class="student annie-pugsley">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                </article>
+                <article class="student annie-pugsley">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
 
+                        </div>
+                        <div class="flip-card-back blue">
+                            <h2 class="student-name">Annie Pugsley</h2>
+                        </div>
                     </div>
-                    <div class="flip-card-back blue">
-                        <h2 class="student-name">Annie Pugsley</h2>
-                    </div>
-                </div>
-            </article>
-            <article class="student sophia-cimelli">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                </article>
+                <article class="student sophia-cimelli">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
 
+                        </div>
+                        <div class="flip-card-back green">
+                            <h2 class="student-name">Sophia Cimelli</h2>
+                        </div>
                     </div>
-                    <div class="flip-card-back green">
-                        <h2 class="student-name">Sophia Cimelli</h2>
-                    </div>
-                </div>
-            </article>
-            <article class="student annie-pugsley">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                </article>
+                <article class="student annie-pugsley">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
 
+                        </div>
+                        <div class="flip-card-back red">
+                            <h2 class="student-name">Annie Pugsley</h2>
+                        </div>
                     </div>
-                    <div class="flip-card-back red">
-                        <h2 class="student-name">Annie Pugsley</h2>
-                    </div>
-                </div>
-            </article>
-            <article class="student bradley-sansom">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                </article>
+                <article class="student bradley-sansom">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
 
+                        </div>
+                        <div class="flip-card-back green">
+                            <h2 class="student-name">Bradley Sansom</h2>
+                        </div>
                     </div>
-                    <div class="flip-card-back green">
-                        <h2 class="student-name">Bradley Sansom</h2>
-                    </div>
-                </div>
-            </article>
-            <article class="student sophia-cimelli">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                </article>
+                <article class="student sophia-cimelli">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
 
+                        </div>
+                        <div class="flip-card-back orange">
+                            <h2 class="student-name">Sophia Cimelli</h2>
+                        </div>
                     </div>
-                    <div class="flip-card-back orange">
-                        <h2 class="student-name">Sophia Cimelli</h2>
-                    </div>
-                </div>
-            </article>
-            <article class="student laura-sheridan">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                </article>
+                <article class="student laura-sheridan">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
 
+                        </div>
+                        <div class="flip-card-back yellow">
+                            <h2 class="student-name">Laura Sheridan</h2>
+                        </div>
                     </div>
-                    <div class="flip-card-back yellow">
-                        <h2 class="student-name">Laura Sheridan</h2>
-                    </div>
-                </div>
-            </article>
-            <article class="student annie-pugsley">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                </article>
+                <article class="student annie-pugsley">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
 
+                        </div>
+                        <div class="flip-card-back pink">
+                            <h2 class="student-name">Annie Pugsley</h2>
+                        </div>
                     </div>
-                    <div class="flip-card-back pink">
-                        <h2 class="student-name">Annie Pugsley</h2>
-                    </div>
-                </div>
-            </article>
+                </article>
+                <article class="student annie-pugsley">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
 
-        </section>
-    </main>
+                        </div>
+                        <div class="flip-card-back blue">
+                            <h2 class="student-name">Annie Pugsley</h2>
+                        </div>
+                    </div>
+                </article>
+                <article class="student sophia-cimelli">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+
+                        </div>
+                        <div class="flip-card-back green">
+                            <h2 class="student-name">Sophia Cimelli</h2>
+                        </div>
+                    </div>
+                </article>
+                <article class="student annie-pugsley">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+
+                        </div>
+                        <div class="flip-card-back red">
+                            <h2 class="student-name">Annie Pugsley</h2>
+                        </div>
+                    </div>
+                </article>
+                <article class="student bradley-sansom">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+
+                        </div>
+                        <div class="flip-card-back green">
+                            <h2 class="student-name">Bradley Sansom</h2>
+                        </div>
+                    </div>
+                </article>
+                <article class="student sophia-cimelli">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+
+                        </div>
+                        <div class="flip-card-back orange">
+                            <h2 class="student-name">Sophia Cimelli</h2>
+                        </div>
+                    </div>
+                </article>
+                <article class="student laura-sheridan">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+
+                        </div>
+                        <div class="flip-card-back yellow">
+                            <h2 class="student-name">Laura Sheridan</h2>
+                        </div>
+                    </div>
+                </article>
+                <article class="student annie-pugsley">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+
+                        </div>
+                        <div class="flip-card-back pink">
+                            <h2 class="student-name">Annie Pugsley</h2>
+                        </div>
+                    </div>
+                </article>
+
+            </section>
+        </main>
+    </div>
+
+
 </body>
+<script>
+    document.querySelector('.perspex#blue').style.animationDuration = Math.floor(Math.random() * 30 + 2) + "s";
+    document.querySelector('.perspex#orange').style.animationDuration = Math.floor(Math.random() * 30 + 2) + "s";
+    document.querySelector('.perspex#green').style.animationDuration = Math.floor(Math.random() * 30 + 2) + "s";
+    document.querySelector('.perspex#red').style.animationDuration = Math.floor(Math.random() * 30 + 2) + "s";
+    document.querySelector('.perspex#yellow').style.animationDuration = Math.floor(Math.random() * 30 + 2) + "s";
+</script>
 
 </html>
