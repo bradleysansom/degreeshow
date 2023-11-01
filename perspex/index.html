@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perspex test</title>
-    <link rel="stylesheet" href="https://use.typekit.net/crm4hph.css">
+    <link rel="stylesheet" href="https://unpkg.com/transition-style">
     <style>
         body {
             background-color: #eeeeee;
@@ -26,7 +26,7 @@
             height: calc(100vh - 200px);
             mix-blend-mode: color-burn;
             animation: edge linear infinite;
-
+            transition: 5s;
             animation-fill-mode: backwards;
             display: flex;
             align-items: flex-end;
@@ -34,53 +34,58 @@
             border: 0;
             margin: 0;
             animation-delay: -5s;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(0.5px);
         }
 
         .perspex h2 {
             color: white;
             margin-left: 5px;
             margin-bottom: 5px;
-            display: none;
         }
 
         .perspex#blue {
             left: 20px;
             top: 20px;
-            background: rgba(40, 159, 242, 0.5);
+            background: rgba(0, 0, 200, 0.5);
             animation-direction: reverse;
         }
 
         .perspex#orange {
             left: 40px;
             top: 40px;
-            background: rgba(254, 140, 1, 0.5);
+            background: rgba(255, 123, 0, 0.5);
         }
 
         .perspex#green {
             left: 60px;
             top: 60px;
-            background: rgba(1, 155, 78, 0.5);
+            background: rgba(0, 200, 0, 0.5);
             animation-direction: reverse;
         }
 
+        .perspex#cyan {
+            left: 80px;
+            top: 80px;
+            background: rgba(0, 123, 123, 0.5);
+        }
 
         .perspex#red {
             left: 100px;
             top: 100px;
-            background: rgba(214, 0, 0, 0.5);
+            background: rgba(255, 0, 0, 0.5);
             animation-direction: reverse;
         }
 
-
+        .perspex#pink {
+            left: 120px;
+            top: 120px;
+            background: rgba(234, 0, 255, 0.5);
+        }
 
         .perspex#yellow {
             left: 140px;
             top: 140px;
-            background: rgba(246, 253, 0, 0.5);
+            background: rgba(229, 255, 0, 0.5);
             animation-direction: reverse;
         }
 
@@ -118,147 +123,54 @@
 
         .card {
             position: absolute;
-            width: calc(100vw - 460px);
-            height: calc(100vh - 460px);
+            width: calc(100vw - 400px);
+            height: calc(100vh - 400px);
             top: 200px;
             left: 200px;
             border: 0;
-            padding: 30px;
+            padding: 0;
             margin: 0;
             animation-delay: 3s;
             color: white;
-            display: flex;
-            align-items: flex-start;
-            flex-direction: column;
-            justify-content: space-between;
-            background-color: rgba(20, 20, 20, 0.6);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-        }
-
-
-        .card * {
-            padding: 0;
-            margin: 0;
-
-
-        }
-
-        .card .branding {
-            align-self: flex-start;
-        }
-
-        .card .links {
-            align-self: flex-end;
-        }
-
-        h1 {
-            font-family: "obviously", sans-serif;
-            font-weight: 800;
-            font-style: normal;
-        }
-
-        h2,
-        h3 {
-            font-family: "obviously-narrow", sans-serif;
-            font-weight: 400;
-            font-style: normal;
-        }
-
-        .card .links ul li {
-            list-style: none;
-            padding: 5px 5px 5px 30px;
-            text-align: right;
-            border: 1px solid white;
-            margin-block-end: 5px;
-            transition: .2s;
-            cursor: pointer;
-        }
-
-        .card .links ul li:hover {
-            background: rgba(255, 255, 255, 0.3);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-        }
-
-        /* Orientation */
-        @media (orientation: landscape) {
-
-
-            div.portrait {
-                display: none;
-            }
-        }
-
-        @media (orientation: portrait) {
-            main {
-                display: none;
-            }
-
-            body {
-                background: black;
-            }
-
-        }
-
-        div.portrait {
-            color: white;
             text-align: center;
-            margin: auto;
-            padding: 50px;
-
         }
 
-        div.portrait img {
-            max-width: 50%;
+        .card img {
+            width: 80%;
+            max-width: 500px;
+
+
         }
     </style>
 </head>
 
 
 <body>
-    <div class="portrait">
-        <img src="rotate.gif">
-        <p>Please turn your phone to landscape.<br>
-            Or, if you're on a PC, make the window wider.</p>
-
-    </div>
     <main>
         <div class="perspex" id="blue">
-            <h2>branding</h2>
-        </div>
-        <div class="perspex" id="orange">
             <h2>art direction</h2>
         </div>
+        <div class="perspex" id="orange">
+            <h2>branding</h2>
+        </div>
         <div class="perspex" id="green">
-            <h2>print</h2>
+            <h2>editorial</h2>
         </div>
-
-        <div class="perspex" id="red">
-            <h2>typography</h2>
-        </div>
-
-        <div class="perspex" id="yellow">
+        <div class="perspex" id="cyan">
             <h2>motion</h2>
         </div>
-        <div class="card">
-            <!--<img src="logo.png" alt="">
-            <h3>BA Graphic Design Degree Show 2024</h3>-->
-            <!--<iframe src="https://bradleysans.uk/" frameborder="0" width="100%" height="100%"></iframe>-->
-            <div class="links">
-                <ul>
-                    <li>Visit</li>
-                    <li>Portfolios</li>
-                    <li>About</li>
-                    <li>Contact</li>
-                </ul>
-            </div>
-            <div class="branding">
-                <h1>THIS IS THE PLACE</h1><br>
-                <h3>BA Graphic Design Degree Show 2024</h3>
-            </div>
+        <div class="perspex" id="red">
+            <h2>print</h2>
+        </div>
+        <div class="perspex" id="pink">
+            <h2>typography</h2>
+        </div>
+        <div class="perspex" id="yellow">
+            <h2>campaigning</h2>
+        </div>
+        <div class="card" transition-style="in:wipe:right">
+            <img src="logo.png" alt="">
+            <h3>BA Graphic Design Degree Show 2024</h3>
         </div>
     </main>
 
@@ -267,7 +179,9 @@
     document.querySelector('.perspex#blue').style.animationDuration = Math.floor(Math.random() * 30 + 2) + "s";
     document.querySelector('.perspex#orange').style.animationDuration = Math.floor(Math.random() * 30 + 2) + "s";
     document.querySelector('.perspex#green').style.animationDuration = Math.floor(Math.random() * 30 + 2) + "s";
+    document.querySelector('.perspex#cyan').style.animationDuration = Math.floor(Math.random() * 30 + 2) + "s";
     document.querySelector('.perspex#red').style.animationDuration = Math.floor(Math.random() * 30 + 2) + "s";
+    document.querySelector('.perspex#pink').style.animationDuration = Math.floor(Math.random() * 30 + 2) + "s";
     document.querySelector('.perspex#yellow').style.animationDuration = Math.floor(Math.random() * 30 + 2) + "s";
 </script>
 
