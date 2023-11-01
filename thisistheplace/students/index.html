@@ -29,6 +29,12 @@
             flex-wrap: wrap;
         }
 
+        header a {
+            text-decoration: none !important;
+            color: #eeeeee;
+            display: inline;
+        }
+
         nav ul {
             display: flex;
             flex-direction: row;
@@ -49,10 +55,13 @@
             color: black;
         }
 
+        nav a:hover li {
+            text-decoration: underline;
+        }
+
         .logo {
             width: 5.2ch;
-            display: flex;
-            flex-direction: column;
+
             font-family: "obviously", sans-serif;
             font-weight: 800;
             line-height: 0.8;
@@ -60,6 +69,11 @@
             font-style: normal;
             text-transform: uppercase;
 
+        }
+
+        .logo a {
+            display: flex;
+            flex-direction: column;
         }
 
         .logo .left {
@@ -132,35 +146,35 @@
         }
 
         .student.bradley-sansom .flip-card-front {
-            background-image: url('bradley.png')
+            background-image: url('../photos/bradley.png')
         }
 
         .student.bradley-sansom .flip-card-back {
-            background-image: url('bradley-sansom-ident.svg');
+            background-image: url('../photos/bradley-sansom-ident.svg');
         }
 
         .student.sophia-cimelli .flip-card-front {
-            background-image: url('sophia.png')
+            background-image: url('../photos/sophia.png')
         }
 
         .student.sophia-cimelli .flip-card-back {
-            background-image: url('sophia-cimelli-ident.svg');
+            background-image: url('../photos/sophia-cimelli-ident.svg');
         }
 
         .student.laura-sheridan .flip-card-front {
-            background-image: url('laura.png')
+            background-image: url('../photos/laura.png')
         }
 
         .student.laura-sheridan .flip-card-back {
-            background-image: url('laura-sheridan-ident.svg');
+            background-image: url('../photos/laura-sheridan-ident.svg');
         }
 
         .student.annie-pugsley .flip-card-front {
-            background-image: url('annie.png')
+            background-image: url('../photos/annie.png')
         }
 
         .student.annie-pugsley .flip-card-back {
-            background-image: url('annie-pugsley-ident.svg');
+            background-image: url('../photos/annie-pugsley-ident.svg');
         }
 
         .student:hover .flip-card-inner {
@@ -342,15 +356,26 @@
     <div class="container">
         <header>
             <div class="logo">
-                <span class="left">this</span><span class="left" id="is">is</span><span class="right">the</span><span
-                    class="right">place</span>
+                <a href="#"><span class="left">this</span><span class="left" id="is">is</span><span
+                        class="right">the</span><span class="right">place</span></a>
             </div>
             <nav>
                 <ul>
-                    <li>Visit</li>
-                    <li class="active">Students</li>
-                    <li>About</li>
-                    <li>Contact</li>
+                    <a href="#">
+                        <li>Visit</li>
+                    </a>
+                    <a href="#">
+                        <li class="active">Students</li>
+                    </a>
+                    <a href="../work/">
+                        <li>Work</li>
+                    </a>
+                    <a href="#">
+                        <li>About</li>
+                    </a>
+                    <a href="#">
+                        <li>Contact</li>
+                    </a>
                 </ul>
             </nav>
         </header>
