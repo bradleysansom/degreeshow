@@ -408,9 +408,46 @@
 
         /* ---- .student-work ---- */
 
-        .grid-sizer,
-        .student-work {
-            width: calc(33.33% - 10px);
+
+
+        @media (max-width: 500px) {
+
+            .grid-sizer,
+            .student-work {
+                width: calc(100% - 10px);
+            }
+        }
+
+        @media (min-width: 501px) {
+
+            .grid-sizer,
+            .student-work {
+                width: calc(50% - 10px);
+            }
+        }
+
+        @media (min-width: 900px) {
+
+            .grid-sizer,
+            .student-work {
+                width: calc(33.33% - 10px);
+            }
+        }
+
+        @media (min-width: 1250px) {
+
+            .grid-sizer,
+            .student-work {
+                width: calc(25% - 10px);
+            }
+        }
+
+        @media (min-width: 1500px) {
+
+            .grid-sizer,
+            .student-work {
+                width: calc(20% - 10px);
+            }
         }
 
         .student-work {
@@ -466,10 +503,10 @@
         .intro {
             display: flex;
             flex-direction: row;
-            max-height: 300px;
             margin: 100px 30px;
             gap: 30px;
             justify-content: space-around;
+            flex-wrap: wrap;
         }
 
         .intro aside p {
@@ -477,6 +514,10 @@
             font-weight: 400;
             font-style: normal;
             max-width: 50ch;
+        }
+
+        .intro img {
+            max-width: 60vw;
         }
     </style>
 </head>
